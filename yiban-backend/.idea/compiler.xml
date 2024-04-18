@@ -8,14 +8,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="yao-user-center-backend" />
+        <module name="demo-ignore" />
         <module name="yiban-backend" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="demo-ignore" target="18" />
+      <module name="yiban-backend" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo-ignore" options="-parameters" />
       <module name="yao-user-center-backend" options="-parameters" />
       <module name="yiban-backend" options="-parameters" />
     </option>

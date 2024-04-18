@@ -230,6 +230,28 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             return true;
         }).map(this::getSafetyUser).collect(Collectors.toList());
     }
+
+    /**
+     * 根据标签搜索用户（sql 查询版）
+     * @Deprecated 过时
+     * @param tagNameList 用户要搜索的标签
+     * @return
+     */
+    @Deprecated
+    private List<User> searchUsersByTagBySQL(List<String> tagNameList) {
+        if (CollectionUtils.isEmpty(tagNameList)) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+
+        // 拼接 tag
+        // like '%Java%' and like '%Python%'
+        for (String tagList : tagNameList) {
+            queryWrapper = queryWrapper.like("tags", tagList);
+        }
+        List<User> userList = userMapper.selectList(queryWrapper);
+        return userList.stream().map(this::getSafetyUser).collect(Collectors.toList());
+    }
 }
 
 

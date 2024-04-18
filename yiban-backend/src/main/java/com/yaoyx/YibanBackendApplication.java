@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.yaoyx.mapper")
-public class YaoUserCenterBackendApplication {
+public class YibanBackendApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(YaoUserCenterBackendApplication.class, args);
+    SpringApplication.run(YibanBackendApplication.class, args);
   }
 }

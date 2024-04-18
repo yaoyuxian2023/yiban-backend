@@ -1,10 +1,10 @@
-package com.yaoyx;
+package com.yuxx.demoignore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class YaoUserCenterBackendApplicationTests {
+class DemoIgnoreApplicationTests {
 
   @Test
   void contextLoads() {}
